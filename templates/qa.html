@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Food Recognition System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+   <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-800" id="app">
+    <header style="background-color: #fea121; color: white;">
+        <div class="container mx-auto flex justify-between items-center p-4">
+          <div class="flex items-center">
+            <img src="{{ url_for('static', filename='src/OIP.png') }}" width="50" height="50" alt="Logo" class="logo">
+            <h1 class="text-2xl font-bold">Food Recognition System</h1>
+          </div>
+          <nav class="flex gap-4">
+            <a href="/" class="ho hover:text-orange-200">Main</a>
+            <a href="/about" class="ho hover:text-orange-200">About</a>
+            <a href="/qa" class="ho hover:text-orange-200">Q&A</a>
+          </nav>
+        </div>
+      </header>
+
+    <main class="container mx-auto my-8 px-4">
+        <!-- <section class="mb-8">
+            <h2 class="text-3xl font-bold text-center mb-4">Frequently Asked Questions</h2>
+            <div class="accordion" id="qa-section">
+                <div class="accordion-item mb-2">
+                    <button class="accordion-header" id="headingOne">
+                        <span>What is the Food Recognition System?</span>
+                    </button>
+                    <div class="accordion-body" aria-labelledby="headingOne">
+                        <p>The Food Recognition System is an AI-based application that identifies food items from images using advanced machine learning algorithms.</p>
+                    </div>
+                </div>
+                <div class="accordion-item mb-2">
+                    <button class="accordion-header" id="headingTwo">
+                        <span>How do I use the system?</span>
+                    </button>
+                    <div class="accordion-body" aria-labelledby="headingTwo">
+                        <p>Simply upload an image of the food item you wish to identify, and the system will analyze the image and provide you with the name and information about the food.</p>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+
+        <section class="qa-section py-8">
+            <div class="container mx-auto">
+              <h2 class="text-4xl font-bold text-center mb-6">Frequently Asked Questions</h2>
+              <div class="qa-container grid md:grid-cols-2 gap-6">
+                <!-- Q&A Card 1 -->
+                <div class="qa-card bg-white rounded-lg shadow-md p-6">
+                    <h3 class="qa-question font-semibold mb-2">What is the Food Recognition System?</h3>
+                    <p class="qa-answer text-gray-600">The Food Recognition System is an AI-based application that identifies food items from images using advanced machine learning algorithms.</p>
+                  </div>
+                  
+                <div class="qa-card bg-white rounded-lg shadow-md p-6">
+                  <h3 class="qa-question font-semibold mb-2">What technology powers the Food Recognition System?</h3>
+                  <p class="qa-answer text-gray-600">Our system is built using state-of-the-art machine learning frameworks and custom algorithms designed specifically for food recognition tasks.</p>
+                </div>
+                <!-- Q&A Card 2 -->
+                <div class="qa-card bg-white rounded-lg shadow-md p-6">
+                    <h3 class="qa-question font-semibold mb-2">How do I use the system?</h3>
+                    <p class="qa-answer text-gray-600">Simply upload an image of the food item you wish to identify, and the system will analyze the image and provide you with the name and information about the food.</p>
+                  </div>
+                <div class="qa-card bg-white rounded-lg shadow-md p-6">
+                  <h3 class="qa-question font-semibold mb-2">Is the Food Recognition System free to use?</h3>
+                  <p class="qa-answer text-gray-600">Yes, our basic food identification service is free for personal use.</p>
+                </div>
+                <!-- More Q&A Cards -->
+              </div>
+            </div>
+          </section>
+          
+    </main>
+
+
+
+    <footer class="bg-gray-200 text-gray-800">
+        <div class="container mx-auto p-4 text-center">
+            <p>&copy; 2024 Food Recognition System. All rights reserved.</p>
+          </div>
+    </footer>
+
+    <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script> -->
+
+    <script src="{{ url_for('static', filename='js/vue.global.min.js') }}"></script>
+    <!-- <script src="{{ url_for('static', filename='js/vue.global.js') }}"></script> -->
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Vue Example</title>
+  <script src="https://unpkg.com/vue@3"></script>
+</head>
+<body>
+
+<div id="app">
+  <input type="file" id="file-upload" @change="onFileChange" accept="image/*">
+  <button v-if="imageFile" @click="recognizeFood">Start recognizing</button>
+  <p>Recognition Result: {{ result }}</p>
+</div>
+
+<script>
+const { createApp, ref } = Vue;
+
+createApp({
+  setup() {
+    const imageFile = ref(null);
+    const result = ref('No result yet.');
+
+    const onFileChange = (e) => {
+      const files = e.target.files;
+      if (files.length > 0) {
+        imageFile.value = files[0];
+      }
+    };
+
+    const recognizeFood = async () => {
+      const formData = new FormData();
+      formData.append('image', imageFile.value);
+
+      try {
+        const response = await fetch('/recognize', {
+          method: 'POST',
+          body: formData,
+        });
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        const data = await response.json();
+        result.value = data.result;
+      } catch (error) {
+        result.value = 'An error occurred.';
+        console.error('Error:', error);
+      }
+    };
+
+    return { imageFile, result, onFileChange, recognizeFood };
+  }
+}).mount('#app');
+</script>
+
+</body>
+</html>
+

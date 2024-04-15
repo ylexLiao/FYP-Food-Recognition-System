@@ -1,0 +1,249 @@
+/* 新添加的样式 */
+.logo {
+    margin-right: 2rem;
+  }
+  
+  .ho {
+    font-weight: bold;
+  }
+  .upload-label {
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    color: #ffa500; /* orange-500 */ /* fd8207 */
+    border: 1px solid #ffa500; /* orange-500 f97316*/
+    background-color: transparent;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem; /* rounded */
+    transition: all 0.2s;
+  }
+  
+  .upload-label:hover {
+    background-color: #ffa500; /* orange-500 */
+    color: white;
+  }
+  
+  .info-box {
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem; /* rounded-lg */
+    background-color: white;
+  }
+  
+  .title {
+    font-size: 1.25rem; /* text-xl */
+    font-weight: 600; /* font-semibold */
+    margin-bottom: 0.5rem;
+  }
+  
+  .description {
+    color: #4b5563; /* text-gray-600 */
+  }
+
+  .description1 {
+    color: #4b5563; /* text-gray-600 */
+  }
+  
+  .description2 {
+    color: #4b5563; /* text-gray-600 */
+  }
+
+  .recognize-button {
+    background-color: #f97316; /* orange-500 */
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem; /* rounded */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.2s;
+  }
+  
+  .recognize-button:hover {
+    background-color: #ffa500; /* orange-600 */
+  }
+  
+  .centered-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  .centered-container img {
+    width: 80%;
+    height: 300px;
+  }
+  
+  .text-overlay {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: #000 2px 0 0, #000 0 2px 0, #000 -2px 0 0, #000 0 -2px 0;
+  }
+  
+  .author-info, .institution-info, .conference-info {
+    margin-bottom: 0.5rem;
+  }
+  
+  /* .button-group .button {
+    display: inline-block;
+    margin-right: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    border-radius: 0.25rem;
+  }
+   */
+  /* .button-group .button:hover {
+    background-color: #555;
+  } */
+
+  /* 基础样式 */
+  .button {
+    display: inline-flex;
+    align-items: center; /* Align items vertically */
+    justify-content: center;
+    margin: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    background-color: #333; /* 按钮背景颜色 */
+    color: #fff; /* 文字颜色 */
+    font-weight: 500;
+    text-decoration: none; /* 去除下划线 */
+    /* transition: color 0.3s;  */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.button svg {
+    fill: #fff; /* SVG填充颜色 */
+    height: 1em;
+    vertical-align: middle; /* 垂直居中对齐 */
+    margin-right: 0.5rem; /* 图标和文字间隔 */
+}
+
+.icon {
+  height: 1.5em !important; /* Adjust the size as needed */
+  width: 1.5em !important;
+  vertical-align: middle;
+  margin-right: 8px; /* 图标和文本之间的距离 */
+  /* fill属性已移至CSS中管理 */
+}
+
+.button:hover, .button:focus {
+    color: #ffa500; /* 鼠标悬停时的文字颜色 */
+    background-color: #000; /* 鼠标悬停时的背景颜色保持不变 */
+}
+
+.button:hover svg, .button:focus svg {
+    fill: #ffa500; /* 鼠标悬停时的SVG颜色变换 */
+}
+
+
+/* 适应 TailwindCSS 的按钮样式 */
+.mx-2 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.images-container {
+  display: flex;
+  justify-content: center; /* Centers images horizontally */
+  flex-wrap: wrap; /* Allows images to wrap to next line on small screens */
+  gap: 16px; /* Adds space between images */
+}
+
+img.method-image {
+   /* flex: 1; */
+  max-height: 500px;
+  width: auto;
+  display: block; 
+  /* margin: 0 auto; */
+  margin: 0 10px;
+}
+
+@media screen and (max-width: 768px) {
+  img.method-image {
+    max-width: 100%; /* Full width on small screens */
+    max-height: 300px; /* Smaller max-height for smaller screens */
+  }
+}
+
+.images2-container {
+  display: flex;
+  justify-content: center; /* Centers images horizontally */
+  /* flex-wrap: wrap; */
+   /* Allows images to wrap to next line on small screens */
+  gap: 0px; /* Adds space between images */
+}
+
+img.dataset-image {
+  /* flex: 1; */
+ max-height: 500px;
+ width: auto;
+ display: block; 
+ /* margin: 0 auto; */
+ /* margin: 0 0px; */
+ margin-right: 0px; 
+}
+
+@media screen and (max-width: 768px) {
+ img.dataset-image {
+   max-width: 100%; /* Full width on small screens */
+   max-height: 300px; /* Smaller max-height for smaller screens */
+ }
+}
+
+img.test-image {
+  /* flex: 1; */
+ max-height: 500px;
+ width: auto;
+ display: block; 
+ /* margin: 0 auto; */
+ /* margin: 0 0px; */
+ margin-right: 0px; 
+}
+
+@media screen and (max-width: 500px) {
+ img.test-image {
+   max-width: 100%; /* Full width on small screens */
+   max-height: 300px; /* Smaller max-height for smaller screens */
+ }
+}
+
+.qa-section {
+  background-color: #f9f9f9;
+}
+
+.qa-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.qa-card {
+  background: #ffffff;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.qa-question {
+  color: #2a2a2a;
+  margin-bottom: 0.5rem;
+}
+
+.qa-answer {
+  color: #575757;
+  line-height: 1.6;
+}

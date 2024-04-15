@@ -1,0 +1,97 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Food Recognition System</title>
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+   <script src="https://cdn.tailwindcss.com"></script>
+ </head>
+ 
+ <body class="bg-gray-100 text-gray-800" id="app">
+ 
+   <!-- <header class="bg-orange-500 text-white"> -->
+    <header style="background-color: #fea121; color: white;">
+     <div class="container mx-auto flex justify-between items-center p-4">
+       <div class="flex items-center">
+         <img src="{{ url_for('static', filename='src/OIP.png') }}" width="50" height="50" alt="Logo" class="logo">
+         <h1 class="text-2xl font-bold">Food Recognition System</h1>
+       </div>
+       <nav class="flex gap-4">
+         <a href="/" class="ho hover:text-orange-200">Main</a>
+         <a href="/about" class="ho hover:text-orange-200">About</a>
+         <a href="/qa" class="ho hover:text-orange-200">Q&A</a>
+       </nav>
+     </div>
+   </header>
+   <main class="container mx-auto my-8 px-4">
+     <section class="text-center mb-12">
+       <div class="centered-container">
+         <img src="{{ url_for('static', filename='src/bgn4.webp') }}" alt="Background image">
+         <h2 class="text-overlay">Recognize  Food</h2>
+       </div>
+     </section>
+ 
+     <section class="mb-12">
+       <div class="flex flex-col items-center">
+         <input type="file" id="file-upload" class="hidden" @change="onFileChange" accept="image/*">
+         <label for="file-upload" class="upload-label">
+           Upload an Image
+         </label>
+       </div>
+
+       <!-- <div id="app">hhhhhh[[ message ]]</div> -->
+
+
+       &nbsp;
+
+       <div class="flex flex-col md:flex-row gap-4">
+        <div class="info-box flex-1">
+          <h3 class="title">Upload Image</h3>
+          <p class="description">Easily upload an image of the food that you want to recognize and let our AI-powered system do the rest.</p>
+          <img id="uploaded-img" src=""  style="max-width: 100%; margin-top: 20px;">
+        </div>
+      
+        <div class="flex-1 flex flex-col">
+          <div class="info-box mb-4">
+            <h3 class="title">Recognition Result</h3>
+           <p v-if="result" class="description1">This meal might be the [[ result ]]...</p>
+           <p v-else  class="description2">Press the "Start recognizing" button to make a prediction... </p>
+          </div>
+          <div class="info-box flex-1">
+            <h3 class="title">Food Description</h3>
+          <p v-if="description" class="description1">[[ description ]]</p>
+          <p v-else class="description2">Food description will be shown here after recognition.</p>
+          </div>
+        </div>
+      </div>
+      
+       &nbsp;
+       <div class="flex flex-col items-center">
+         <button v-if="imageFile" @click="recognizeFood" class="recognize-button">
+           Start recognizing
+         </button>
+       </div>
+
+
+     </section>
+   </main>
+ 
+   <footer class="bg-gray-200 text-gray-800">
+     <div class="container mx-auto p-4 text-center">
+       <p>&copy; 2024 Food Recognition System. All rights reserved.</p>
+     </div>
+   </footer>
+ 
+   <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+   <script src="{{ url_for('static', filename='js/app.js') }}"></script> -->
+   <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js" type="text/javascript"></script>
+  <script src="{{ url_for('static', filename='js/app.js') }}" type="text/javascript"></script> -->
+
+  <script src="{{ url_for('static', filename='js/vue.global.min.js') }}"></script>
+  <!-- <script src="{{ url_for('static', filename='js/vue.global.cjs.js') }}"></script> -->
+  <!-- <script src="{{ url_for('static', filename='js/vue.global.js') }}"></script> -->
+   <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+ </body>
+
+ </html>
